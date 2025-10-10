@@ -1,0 +1,234 @@
+/* Stili Generali */
+body {
+    /* Centratura verticale e orizzontale */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+#converter-container {
+    /* Contenitore principale */
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.base-title {
+    /* Stile delle intestazioni "Base ottale" e "Base decimale" */
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    margin: 20px 0;
+}
+
+/* ---------------- Display Cifre (Bottoni con ID) ---------------- */
+
+#display-cifre {
+    /* Contenitore delle cifre */
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 30px 0;
+}
+
+/* Stile base applicato a tutti i bottoni numerici */
+#button1, #button2, #button3, #button4 {
+    /* Reset e styling del bottone cifra */
+    appearance: none;
+    -webkit-appearance: none;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    
+    width: 60px;
+    height: 90px;
+    font-size: 3em;
+    font-weight: bold;
+    color: #333;
+    background-color: #e6f0f7; /* Blu chiaro */
+    border-radius: 8px;
+    border: 1px solid #c0c0c0;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    transition: all 0.2s ease;
+}
+
+/* Effetto hover per tutti i bottoni numerici non attivi */
+#button1:hover, #button2:hover, #button3:hover, #button4:hover,#button3:hover {
+    background-color: #d8e5f0;
+}
+/* ---------------- Area di Controllo ---------------- */
+
+#control-area {
+    /* Contenitore del menu e del bottone (affiancati) */
+    display: flex;
+    justify-content: space-between; /* Spazio tra il selettore e il bottone */
+    align-items: center; 
+    padding: 0 10px;
+    margin-bottom: 50px;
+}
+
+/* Stili per il selettore base in linea */
+#base-selector-inline {
+    text-align: left;
+    display: flex;
+}
+
+/* ---------------- NUOVI STILI PER LA ZONA DI TRADUZIONE ---------------- */
+
+#display-traduzione {
+    /* Riusa gli stili del display input per il layout Flexbox */
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 30px 0 10px 0; /* Un po' meno margine sotto */
+}
+
+.cifra-output {
+    /* Le cifre di output sono molto simili a quelle di input, ma senza cursor: pointer */
+    
+    width: 60px;
+    height: 90px;
+    font-size: 3em;
+    font-weight: bold;
+    color: #333;
+    background-color: #f0f0f0; /* Sfondo leggermente più scuro o neutro per distinguerle */
+    border-radius: 8px;
+    border: 1px solid #c0c0c0;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Disabilitiamo la selezione del testo per un aspetto più 'digitale' */
+    user-select: none;
+}
+
+/* ... (Mantieni tutti gli stili precedenti fino a qui) ... */
+
+/* ---------------- NUOVI STILI PER LA ZONA DI TRADUZIONE GRANDE ---------------- */
+
+#display-traduzione-grande {
+    /* Contenitore per il risultato grande */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0 10px 0;
+    padding: 10px;
+}
+
+#risultato-tradotto {
+    /* Stile per il numero tradotto */
+    min-width: 250px; /* Larghezza minima per contenere un numero */
+    padding: 15px 25px; 
+    font-size: 3em; /* Carattere grande */
+    font-weight: bold;
+    color: #555; /* Testo leggermente scuro */
+    
+    background-color: #f0f0f0; /* Sfondo neutro */
+    border-radius: 8px;
+    border: 1px solid #c0c0c0;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    
+    /* Assicurati che il testo non vada a capo e sia centrato */
+    white-space: nowrap; 
+    text-align: center;
+    user-select: none;
+    
+    /* Altezza fissa o minima per un aspetto uniforme */
+    line-height: 1.2; 
+}
+
+/* ... (Manteniamo tutti gli stili precedenti fino a #control-area) ... */
+
+#control-area {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start; /* Allinea il bottone Calcola in alto */
+    padding: 0 10px;
+    margin-bottom: 50px;
+}
+
+/* ... (Mantieni tutti gli stili precedenti fino a #control-area) ... */
+
+#control-area {
+    /* Contenitore del menu e del bottone (affiancati) */
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start; /* Allinea il bottone Calcola in alto */
+    padding: 0 10px;
+    margin-bottom: 50px;
+}
+
+/* Stili per il Fieldset (Contenitore della Selezione Base) */
+#base-selector-fieldset {
+    /* Resetta gli stili predefiniti del fieldset e applica il nostro stile */
+    border: 1px solid #ddd; 
+    border-radius: 5px;
+    background-color: #fafafa;
+    padding: 10px; /* Padding interno */
+    margin: 0; /* Rimuovi i margini predefiniti */
+}
+
+/* Stili per la Legend (Etichetta "Seleziona una base:") */
+.selector-label {
+    /* Resetta gli stili predefiniti del legend */
+    font-weight: bold;
+    color: #555;
+    font-size: 0.9em;
+    padding: 0 5px; /* Padding per staccare il testo dal bordo del fieldset */
+    margin-bottom: 5px;
+    /* Usato per mantenere lo stile dell'etichetta separata dal gruppo */
+    display: block; 
+}
+
+#radio-buttons-group {
+    display: flex;
+    flex-direction: column; /* Dispone gli elementi verticalmente */
+    gap: 5px; 
+    padding-left: 5px; 
+    margin-top: 5px; /* Spazio sotto la legend */
+}
+
+#radio-buttons-group label {
+    font-size: 0.9em;
+    cursor: pointer;
+    display: block; 
+}
+
+#radio-buttons-group input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Bottone Calcola con Grafica */
+#convert-button {
+    padding: 12px 25px; 
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    
+    color: #ffffff;
+    background-color: #007bff; 
+    border: 2px solid #0056b3; 
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#convert-button:hover {
+    background-color: #0056b3; 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+/* ... (Il resto del CSS rimane invariato) ... */

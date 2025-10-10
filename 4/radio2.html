@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertitore Base Numerica</title>
+    <link rel="stylesheet" href="stile.css">
+</head>
+<body>
+
+    <div id="converter-container">
+        
+        <h2 id="base-input-title" class="base-title"></h2>
+
+        <div id="display-cifre">
+            <button id="button1" class="cifra">0</button>
+            <button id="button2" class="cifra">0</button>
+            <button id="button3" class="cifra">0</button>
+            <button id="button4" class="cifra">0</button>
+        </div>
+
+        <div id="control-area">
+            
+            <fieldset id="base-selector-fieldset">
+                <legend id="selector-label">Seleziona una base:</legend>
+                
+                <div id="radio-buttons-group">
+                    <label><input id="radio1" type="radio" name="base" value="binario" checked> binario</label>
+                    <label><input id="radio2" type="radio" name="base" value="ottale"> ottale</label>
+                    <label><input id="radio3" type="radio" name="base" value="esadecimale"> esadecimale</label>
+                </div>
+            </fieldset>
+
+            <button id="convert-button">Calcola</button>
+        </div>
+
+        <h2 id="base-output-title" class="base-title">Base decimale</h2>
+
+        <div id="display-traduzione-grande">
+            <span id="risultato-tradotto">0</span>
+        </div>
+
+    </div>
+
+<script src="funzioni.js"></script>
+</body>
+</html>
