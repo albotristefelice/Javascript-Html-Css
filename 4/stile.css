@@ -1,234 +1,192 @@
-/* Stili Generali */
-body {
-    /* Centratura verticale e orizzontale */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+:root {
+    /* Variabili colore per un tema scuro/neutro professionale */
+    --color-primary: #1F3B59; /* Blu scuro principale (Header & Input Box) */
+    --color-secondary: #0A1C2C; /* Blu ancora più scuro (Sfondo Body) */
+    --color-accent: #3498DB; /* Blu di accento per interazioni */
+    --color-text-light: #ECF0F1; /* Testo chiaro */
+    --color-text-dark: #2C3E50; /* Testo scuro */
+    --color-light-bg: #FFFFFF; /* Sfondo quadrati */
+}
+
+/* Stile base e reset */
+* {
+    box-sizing: border-box;
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-}
-
-#converter-container {
-    /* Contenitore principale */
-    text-align: center;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.base-title {
-    /* Stile delle intestazioni "Base ottale" e "Base decimale" */
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #333;
-    margin: 20px 0;
-}
-
-/* ---------------- Display Cifre (Bottoni con ID) ---------------- */
-
-#display-cifre {
-    /* Contenitore delle cifre */
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin: 30px 0;
-}
-
-/* Stile base applicato a tutti i bottoni numerici */
-#button1, #button2, #button3, #button4 {
-    /* Reset e styling del bottone cifra */
-    appearance: none;
-    -webkit-appearance: none;
-    background: none;
-    border: none;
     padding: 0;
-    cursor: pointer;
-    
-    width: 60px;
-    height: 90px;
-    font-size: 3em;
-    font-weight: bold;
-    color: #333;
-    background-color: #e6f0f7; /* Blu chiaro */
-    border-radius: 8px;
-    border: 1px solid #c0c0c0;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
-    
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-secondary);
     display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    transition: all 0.2s ease;
+    flex-direction: column;
+    min-height: 100vh;
+    color: var(--color-text-dark);
 }
 
-/* Effetto hover per tutti i bottoni numerici non attivi */
-#button1:hover, #button2:hover, #button3:hover, #button4:hover,#button3:hover {
-    background-color: #d8e5f0;
-}
-/* ---------------- Area di Controllo ---------------- */
-
-#control-area {
-    /* Contenitore del menu e del bottone (affiancati) */
-    display: flex;
-    justify-content: space-between; /* Spazio tra il selettore e il bottone */
-    align-items: center; 
-    padding: 0 10px;
-    margin-bottom: 50px;
-}
-
-/* Stili per il selettore base in linea */
-#base-selector-inline {
-    text-align: left;
-    display: flex;
-}
-
-/* ---------------- NUOVI STILI PER LA ZONA DI TRADUZIONE ---------------- */
-
-#display-traduzione {
-    /* Riusa gli stili del display input per il layout Flexbox */
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin: 30px 0 10px 0; /* Un po' meno margine sotto */
-}
-
-.cifra-output {
-    /* Le cifre di output sono molto simili a quelle di input, ma senza cursor: pointer */
-    
-    width: 60px;
-    height: 90px;
-    font-size: 3em;
-    font-weight: bold;
-    color: #333;
-    background-color: #f0f0f0; /* Sfondo leggermente più scuro o neutro per distinguerle */
-    border-radius: 8px;
-    border: 1px solid #c0c0c0;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    /* Disabilitiamo la selezione del testo per un aspetto più 'digitale' */
-    user-select: none;
-}
-
-/* ... (Mantieni tutti gli stili precedenti fino a qui) ... */
-
-/* ---------------- NUOVI STILI PER LA ZONA DI TRADUZIONE GRANDE ---------------- */
-
-#display-traduzione-grande {
-    /* Contenitore per il risultato grande */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 30px 0 10px 0;
-    padding: 10px;
-}
-
-#risultato-tradotto {
-    /* Stile per il numero tradotto */
-    min-width: 250px; /* Larghezza minima per contenere un numero */
-    padding: 15px 25px; 
-    font-size: 3em; /* Carattere grande */
-    font-weight: bold;
-    color: #555; /* Testo leggermente scuro */
-    
-    background-color: #f0f0f0; /* Sfondo neutro */
-    border-radius: 8px;
-    border: 1px solid #c0c0c0;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
-    
-    /* Assicurati che il testo non vada a capo e sia centrato */
-    white-space: nowrap; 
+/* 1. HEADER */
+.header-section {
+    background-color: var(--color-primary);
+    padding: 25px 0;
     text-align: center;
-    user-select: none;
-    
-    /* Altezza fissa o minima per un aspetto uniforme */
-    line-height: 1.2; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* ... (Manteniamo tutti gli stili precedenti fino a #control-area) ... */
+.header-title {
+    color: var(--color-text-light);
+    font-size: 2.5em;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
 
-#control-area {
+/* 2. CONTENITORE PRINCIPALE E SEZIONI */
+.game-container {
+    flex-grow: 1;
     display: flex;
-    justify-content: space-between; 
-    align-items: flex-start; /* Allinea il bottone Calcola in alto */
-    padding: 0 10px;
-    margin-bottom: 50px;
+    flex-direction: column;
+    justify-content: space-between; /* Spinge le sezioni in alto e in basso */
+    align-items: center;
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
 }
 
-/* ... (Mantieni tutti gli stili precedenti fino a #control-area) ... */
-
-#control-area {
-    /* Contenitore del menu e del bottone (affiancati) */
+/* Sezione parola mischiata (centrale) */
+.scrambled-word-section {
+    padding: 50px 0;
+    width: 100%;
     display: flex;
-    justify-content: space-between; 
-    align-items: flex-start; /* Allinea il bottone Calcola in alto */
-    padding: 0 10px;
-    margin-bottom: 50px;
+    justify-content: center;
 }
 
-/* Stili per il Fieldset (Contenitore della Selezione Base) */
-#base-selector-fieldset {
-    /* Resetta gli stili predefiniti del fieldset e applica il nostro stile */
-    border: 1px solid #ddd; 
-    border-radius: 5px;
-    background-color: #fafafa;
-    padding: 10px; /* Padding interno */
-    margin: 0; /* Rimuovi i margini predefiniti */
+.letter-squares-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
-/* Stili per la Legend (Etichetta "Seleziona una base:") */
-.selector-label {
-    /* Resetta gli stili predefiniti del legend */
+.letter-square {
+    width: 90px;
+    height: 90px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
     font-weight: bold;
-    color: #555;
-    font-size: 0.9em;
-    padding: 0 5px; /* Padding per staccare il testo dal bordo del fieldset */
-    margin-bottom: 5px;
-    /* Usato per mantenere lo stile dell'etichetta separata dal gruppo */
-    display: block; 
+    color: var(--color-text-dark);
+    /* Animazione per reattività */
+    transition: all 0.2s ease-in-out; 
 }
 
-#radio-buttons-group {
+/* Stile specifico per i quadrati vuoti */
+.empty-square {
+    background-color: var(--color-light-bg);
+    /* Bordo sottile e accento */
+    border: 3px solid var(--color-accent); 
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+/* 3. SEZIONE INSERIMENTO */
+.input-section-wrapper {
+    width: 100%;
+    /* Rende il contenitore più visibile sul blu scuro di sfondo */
+    background-color: transparent; 
+    padding: 20px 0;
+}
+
+.input-section {
+    background-color: var(--color-primary);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    max-width: 500px; /* Limita la larghezza della scatola */
+    margin: 0 auto;
+}
+
+.section-title {
+    color: var(--color-text-light);
+    font-size: 1.6em;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 400;
+}
+
+.input-form {
     display: flex;
-    flex-direction: column; /* Dispone gli elementi verticalmente */
-    gap: 5px; 
-    padding-left: 5px; 
-    margin-top: 5px; /* Spazio sotto la legend */
+    gap: 10px;
 }
 
-#radio-buttons-group label {
-    font-size: 0.9em;
+#guess {
+    padding: 15px 20px;
+    border: none; /* Rimosso il bordo per un look più pulito */
+    border-radius: 8px;
+    font-size: 1.1em;
+    flex-grow: 1;
+    background-color: var(--color-light-bg);
+    color: var(--color-text-dark);
+    /* Aggiunta di un'ombra sottile per la profondità */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); 
+    transition: box-shadow 0.3s;
+}
+
+/* Effetto al focus per l'input */
+#guess:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--color-accent); /* Anello di focus blu */
+}
+
+.submit-button {
+    background-color: var(--color-accent);
+    color: var(--color-text-light);
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
     cursor: pointer;
-    display: block; 
+    transition: background-color 0.2s, transform 0.1s;
 }
 
-#radio-buttons-group input[type="radio"] {
-    margin-right: 5px;
+.submit-button:hover {
+    background-color: #2980B9; /* Blu leggermente più scuro */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Bottone Calcola con Grafica */
-#convert-button {
-    padding: 12px 25px; 
-    font-size: 1em;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    
-    color: #ffffff;
-    background-color: #007bff; 
-    border: 2px solid #0056b3; 
-    border-radius: 6px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.submit-button:active {
+    transform: translateY(0);
 }
 
-#convert-button:hover {
-    background-color: #0056b3; 
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+/* 4. RESPONSIVITÀ */
+@media (max-width: 600px) {
+    .header-title {
+        font-size: 2em;
+    }
+
+    .letter-square {
+        width: 65px;
+        height: 65px;
+        font-size: 2em;
+        border-width: 2px;
+    }
+
+    .letter-squares-container {
+        gap: 10px;
+    }
+
+    .input-section {
+        padding: 20px;
+    }
+
+    .input-form {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #guess, .submit-button {
+        width: 100%;
+        padding: 12px 15px;
+    }
 }
-/* ... (Il resto del CSS rimane invariato) ... */
